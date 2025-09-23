@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class TicTacToeGame{
+  static char[][] board=new char[3][3];
+  static char playerLetter,ComputerLetter;
+  static Scanner sc =new Scanner(System.in);
+  static Random random=new Random();
+
+
+
+   private static  void createBoard(){
+    for(int i=1;i<board.length;i++){
+        board[i]=' ';
+    }
+   }
+
+ static void chooseLetter(){
+    System.out.println("choose your letter(X/O):"):
+    PlayerLetter =Scanner.next().toUpperCase().charAT(0);
+    ComputerLetter=(PlayerLetter == 'X')? '0':'X';
+
+ }
