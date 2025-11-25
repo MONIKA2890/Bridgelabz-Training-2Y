@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class WrapperPerformance {
+    public static void main(String[] args) {
+        int n = 1_000_000;
+        long start, end;
+
+        // Using int[]
+        int[] arr = new int[n];
+        start = System.currentTimeMillis();
+        for (int i = 0; i < n; i++) arr[i] = i;
+        long sum1 = 0;
+        for (int x : arr) sum1 += x;
+        end = System.currentTimeMillis();
+        System.out.println("int[] Sum = " + sum1 + " | Time = " + (end - start) + " ms");
+
+        // Using ArrayList<Integer>
+        ArrayList<Integer> list = new ArrayList<>(n);
+        start = System.currentTimeMillis();
+        for (int i = 0; i < n; i++) list.add(i);
+        long sum2 = 0;
+        for (int x : list) sum2 += x;
+        end = System.currentTimeMillis();
+        System.out.println("ArrayList<Integer> Sum = " + sum2 + " | Time = " + (end - start) + " ms");
+    }
+}
